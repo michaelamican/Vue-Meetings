@@ -6,6 +6,7 @@
           <div class="card bg-light">
             <div class="card-body">
               <h3 class="font-weight-light mb-3">Check In</h3>
+              <!-- <h4>{{ meetingDeets.name }}</h4> -->
               <section class="form-group">
                 <div class="col-12 alert alert-danger px-3" v-if="error">
                   {{ error }}
@@ -44,11 +45,13 @@
   </form>
 </template>
 <script>
+// import db from "../db.js";
 export default {
   data: function() {
     return {
       displayName: null,
-      eMail: null
+      eMail: null,
+      meetingDeets: null
     };
   },
   props: ["error", "meetings"],
@@ -70,6 +73,24 @@ export default {
       this.displayName = null;
       this.eMail = null;
     }
+    //   },
+    //   mounted() {
+    //       db.collection("users")
+    //       .doc(this.userId)
+    //       .collection("meetings")
+    //       .doc(this.meetingId)
+    //       .onSnapshot(snapshot => {
+    //           const snapData = [];
+    //           snapshot.forEach(doc => {
+    //               snapData.push({
+    //                   id: doc.id,
+    //                   attendees: doc.attendees,
+    //                   eMail: doc.eMail,
+    //                   name: doc.name
+    //               });
+    //           });
+    //           this.meetingDeets = snapData;
+    //         });
   }
 };
 </script>

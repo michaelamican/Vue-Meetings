@@ -134,6 +134,6 @@ export default {
 </script>
 <style lang="scss">
 $primary: indianred;
-$danger: rebeccapurple;
+$danger: goldenrod;
 @import "node_modules/bootstrap/scss/bootstrap";
 </style>
